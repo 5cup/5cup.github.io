@@ -1,0 +1,274 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.8.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.8.0" type="image/png" sizes="32x32"><meta name="description" content="打开 Dev Tool        菜单&gt;更多工具&gt;开发者工具 快捷键 F12">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端调试--谷歌篇">
+<meta property="og:url" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/index.html">
+<meta property="og:site_name" content="5cup的博客">
+<meta property="og:description" content="打开 Dev Tool        菜单&gt;更多工具&gt;开发者工具 快捷键 F12">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/debug_C_001.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/debug_C_002.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/debug_C_003.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/debug_C_004.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/debug_C_005.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/debug_C_006.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/debug_C_007.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/debug_C_008.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/debug_C_009.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/debug_C_010.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/debug_C_011.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/debug_C_012.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/debug_C_013.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/debug_C_014.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/debug_C_015.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/debug_C_016.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/debug_C_031.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/debug_C_017.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/debug_C_018.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/debug_C_019.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/debug_C_020.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/debug_C_021.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/debug_C_022.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/debug_C_023.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/debug_C_024.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/debug_C_025.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/debug_C_026.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/debug_C_027.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/debug_C_028.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/debug_C_029.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/debug_C_030.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/debug_C_032.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/debug_C_033.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/debug_C_034.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/debug_C_035.png">
+<meta property="article:published_time" content="2023-06-18T22:45:42.000Z">
+<meta property="article:modified_time" content="2023-07-02T15:49:49.712Z">
+<meta property="article:author" content="5cup">
+<meta property="article:tag" content="debug">
+<meta property="article:tag" content="chrome">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/debug_C_001.png"><title>前端调试--谷歌篇 | 5cup的博客</title><link ref="canonical" href="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.8.0"><link rel="stylesheet" href="css/custom.css"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="5cup的博客" type="application/atom+xml">
+</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">前端调试--谷歌篇</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2023-06-19</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2023-07-02</span></span></div></header><div class="post-body">
+        <h3 id="打开-Dev-Tool"   >
+          <a href="#打开-Dev-Tool" class="heading-link"><i class="fas fa-link"></i></a><a href="#打开-Dev-Tool" class="headerlink" title="打开 Dev Tool"></a>打开 Dev Tool</h3>
+      <ul>
+<li>菜单&gt;更多工具&gt;开发者工具</li>
+<li>快捷键 F12</li>
+</ul>
+<img src="/2023/06/19/fontEnd/debug/debug-chrome/debug_C_001.png" class="">
+
+<span id="more"></span>
+
+
+        <h3 id="打开命令菜单"   >
+          <a href="#打开命令菜单" class="heading-link"><i class="fas fa-link"></i></a><a href="#打开命令菜单" class="headerlink" title="打开命令菜单"></a>打开命令菜单</h3>
+      <ul>
+<li><p>快捷键：</p>
+<ul>
+<li><code>CTRL</code> + <code>SHIFT</code> + <code>P</code></li>
+<li><code>Command</code> + <code>SHIFT</code> + <code>P</code>(MAC)</li>
+</ul>
+</li>
+<li><p>修改 <code>DevTool</code> 的主题<br>在命令菜单中输入 <code>dark</code>&#x2F;<code>light theme</code> 即可切换黑&#x2F;白色主题</p>
+<img src="/2023/06/19/fontEnd/debug/debug-chrome/debug_C_002.png" class=""></li>
+<li><p>截屏<br>在命令菜单中输入 <code>screenshot</code>,会出现四个选项：</p>
+<ul>
+<li>Capture area screenshot – 通过鼠标指针选中区域后会下载到电脑上</li>
+<li>Capture full size screenshot 截取整个页面（包含滚动条之外的部分）并下载</li>
+<li>Capture node screenshot 选中某个 node 节点后再执行该命令可将该节点进行截图并下载</li>
+<li>Capture screenshot 截取当前显示页面（不包含滚动条之外的部分）并下载</li>
+</ul>
+</li>
+<li><p>dock 改变 <code>DevTool</code> 的位置</p>
+<ul>
+<li>dock to left 将<code>DevTool</code>移至左侧</li>
+<li>dock to right 将<code>DevTool</code>移至右侧</li>
+<li>dock to bottom 将<code>DevTool</code>移至底部</li>
+<li>undock 在新窗口打开<code>DevTool</code></li>
+</ul>
+</li>
+</ul>
+
+        <h3 id="常用的-Tab"   >
+          <a href="#常用的-Tab" class="heading-link"><i class="fas fa-link"></i></a><a href="#常用的-Tab" class="headerlink" title="常用的 Tab"></a>常用的 Tab</h3>
+      <ul>
+<li>Element</li>
+<li>Console</li>
+<li>Source</li>
+<li>Network</li>
+<li>Application</li>
+</ul>
+
+        <h4 id="Element"   >
+          <a href="#Element" class="heading-link"><i class="fas fa-link"></i></a><a href="#Element" class="headerlink" title="Element"></a>Element</h4>
+      <p>查找网页源代码 HTML 中的任一元素,手动修改任一元素的属性和样式且能实时在浏览器里面得到反馈</p>
+<p><strong>检查元素</strong><br>可通过右键某个元素然后选择检查定位到该元素，也可点击 <code>DevTool</code> 左侧的图标来选中某元素,旁边的图标可切换成移动设备显示</p>
+<img src="/2023/06/19/fontEnd/debug/debug-chrome/debug_C_003.png" class="">
+
+
+        <h5 id="查找-DOM-树"   >
+          <a href="#查找-DOM-树" class="heading-link"><i class="fas fa-link"></i></a><a href="#查找-DOM-树" class="headerlink" title="查找 DOM 树"></a>查找 DOM 树</h5>
+      <ul>
+<li><p>快捷键</p>
+<ul>
+<li><code>CTRL</code>+<code>F</code></li>
+<li><code>Command</code>+<code>F</code><br>通过快捷键可打开一个搜索框，在里面输入想要查询的内容即可，匹配的内容会被高亮显示<img src="/2023/06/19/fontEnd/debug/debug-chrome/debug_C_004.png" class=""></li>
+</ul>
+</li>
+<li><p>查询方式</p>
+<ul>
+<li><p>文本查询 – 匹配符合的文本内容</p>
+<img src="/2023/06/19/fontEnd/debug/debug-chrome/debug_C_005.png" class="">
+</li>
+<li><p>css 选择器 – 通过 css 选择器指定，如输入 <code>.zooming</code> 来匹配 class 为 zooming 的元素</p>
+<img src="/2023/06/19/fontEnd/debug/debug-chrome/debug_C_006.png" class="">
+</li>
+<li><p>Xpath – &#x2F;&#x2F;ul&#x2F;li ‘&#x2F;&#x2F;‘ 表示在全局范围内查找 ul 标签下面的 li 标签</p>
+<img src="/2023/06/19/fontEnd/debug/debug-chrome/debug_C_007.png" class=""></li>
+</ul>
+</li>
+<li><p>Console<br>也可以通过 Console 定位到某个节点<br>在 console 中输入 <code>inspect(document.getElementById(&#39;打开命令菜单&#39;))</code>回车，就能定位到该节点了</p>
+<img src="/2023/06/19/fontEnd/debug/debug-chrome/debug_C_008.png" class="">
+<img src="/2023/06/19/fontEnd/debug/debug-chrome/debug_C_009.png" class=""></li>
+</ul>
+
+        <h5 id="编辑样式"   >
+          <a href="#编辑样式" class="heading-link"><i class="fas fa-link"></i></a><a href="#编辑样式" class="headerlink" title="编辑样式"></a>编辑样式</h5>
+      <p>在 Element 面板的右半部分是样式内容，可直接在此修改页面的样式</p>
+<p><strong>style 面板</strong></p>
+<ul>
+<li><p>让 hover 常驻<br>选中某个元素后点击 <code>:hov</code>后能看到下方出现了多种状态，想要常驻那种状态直接勾选即可</p>
+<img src="/2023/06/19/fontEnd/debug/debug-chrome/debug_C_010.png" class="">
+</li>
+<li><p>编辑 class<br>选中某个元素后能看到该元素的 class，取消掉前面的勾选即可使该样式失效</p>
+<img src="/2023/06/19/fontEnd/debug/debug-chrome/debug_C_011.png" class="">
+<p>但是此种修改方法会应用到所有拥有该 class 的元素，若想单独修改某个元素的 class，可点击 <code>.cls</code>，，此时能看到有一个单独的 class 出现了，取消勾选只会对选中的元素生效</p>
+<img src="/2023/06/19/fontEnd/debug/debug-chrome/debug_C_012.png" class="">
+</li>
+<li><p>复制样式<br>选中某个元素后，右键选择 Copy&gt; Copy Style 即可复制该样式</p>
+<img src="/2023/06/19/fontEnd/debug/debug-chrome/debug_C_013.png" class=""></li>
+</ul>
+<p><strong>Computed 面板</strong><br>Computed 将所有生效的样式都列举出来了，点击右边的箭头可跳转到包含该样式的 class 中</p>
+<img src="/2023/06/19/fontEnd/debug/debug-chrome/debug_C_014.png" class="">
+<p>最底部是字体</p>
+<img src="/2023/06/19/fontEnd/debug/debug-chrome/debug_C_015.png" class="">
+
+<p><strong>Layout 面板</strong><br>Layout 面板分为两个部分：Grid 和 FlexBox,页面中所用到的 grid 布局和 flex 布局都可以在此找到</p>
+<p><strong>Event Listeners 面板</strong><br>此处可以看到页面中绑定的事件</p>
+<img src="/2023/06/19/fontEnd/debug/debug-chrome/debug_C_016.png" class="">
+
+<p><strong>DOM Breakpoints 面板</strong><br>选中某个节点后右键选择 <code>Break on</code>，能看到三个选项</p>
+<ul>
+<li>subtree modifications: 若此节点的子节点被修改了，js 运行就会被暂停</li>
+<li>attribute modifications： 若节点的属性被修改了，js 运行就会被暂停</li>
+<li>node removal： 若此节点被从文档删除，js 运行就会被暂停<img src="/2023/06/19/fontEnd/debug/debug-chrome/debug_C_031.png" class=""></li>
+</ul>
+<p><strong>Properties 面板</strong><br>能看到所有节点属性</p>
+<img src="/2023/06/19/fontEnd/debug/debug-chrome/debug_C_017.png" class="">
+
+<p><strong>Accessibility 面板</strong><br>帮助构建无障碍页面</p>
+
+        <h4 id="Console（控制台）"   >
+          <a href="#Console（控制台）" class="heading-link"><i class="fas fa-link"></i></a><a href="#Console（控制台）" class="headerlink" title="Console（控制台）"></a>Console（控制台）</h4>
+      <ul>
+<li><p>快捷键</p>
+<ul>
+<li><code>CTRL</code> + <code>SHIFT</code> + <code>J</code></li>
+<li><code>Command</code> + <code>Opton</code> + <code>J</code>(mac)</li>
+</ul>
+</li>
+<li><p>执行语句<br><code>&gt;</code> 表示执行的语句<br><code>&lt;·</code> 表示上一条语句的返回值</p>
+<img src="/2023/06/19/fontEnd/debug/debug-chrome/debug_C_018.png" class=""></li>
+<li><p><code>$_</code> 返回上一条语句的执行结果<br>定义 a&#x3D;1,b&#x3D;2,执行 a+b 后，可使用<code>$\_</code> 返回上一条语句(a+b)的结果</p>
+<img src="/2023/06/19/fontEnd/debug/debug-chrome/debug_C_019.png" class=""></li>
+<li><p><code>$0</code> 返回当前选择的 DOM 节点<br>在 选中一个元素节点后，在控制台输入 <code>$0</code></p>
+<img src="/2023/06/19/fontEnd/debug/debug-chrome/debug_C_020.png" class="">
+<img src="/2023/06/19/fontEnd/debug/debug-chrome/debug_C_021.png" class="">
+<p><code>$1</code> 返回上一个选择的节点，<code>$2</code> 返回上上一个选择的节点。。。</p>
+</li>
+<li><p>console 语句</p>
+<ul>
+<li>console.log() 显示相关信息</li>
+<li>console.error() 显示错误信息</li>
+<li>console.warn() 显示警告信息</li>
+<li>console.clear() 清空控制台信息</li>
+<li>console.group() 将信息以组的形式展示<br>组以 <code>console.group()</code>开始，以 <code>console.groupEnd()</code>结束<img src="/2023/06/19/fontEnd/debug/debug-chrome/debug_C_022.png" class=""></li>
+<li>console.time() 返回一段代码执行的时间<br>以 <code>console.time()</code>开始，以 <code>console.timeEnd()</code>结束<img src="/2023/06/19/fontEnd/debug/debug-chrome/debug_C_023.png" class=""></li>
+<li>console.table() 把一个数组以表格的形式展示出来<img src="/2023/06/19/fontEnd/debug/debug-chrome/debug_C_024.png" class=""></li>
+</ul>
+</li>
+<li><p>Log 级别筛选<br>可通过右边的下拉选项选择要显示的 Log 信息</p>
+<img src="/2023/06/19/fontEnd/debug/debug-chrome/debug_C_025.png" class=""></li>
+<li><p>观测变量<br>点击 眼睛图标可以观测变量变化<br>定义变量 a &#x3D; 3，点击眼睛图标后输入变量 a，再修改变量 a 的值，能从上方看到变量 a 的变化</p>
+<img src="/2023/06/19/fontEnd/debug/debug-chrome/debug_C_026.png" class="">
+<img src="/2023/06/19/fontEnd/debug/debug-chrome/debug_C_027.png" class=""></li>
+</ul>
+
+        <h5 id="Javascript-调试"   >
+          <a href="#Javascript-调试" class="heading-link"><i class="fas fa-link"></i></a><a href="#Javascript-调试" class="headerlink" title="Javascript 调试"></a>Javascript 调试</h5>
+      <p>可通过 <code>debugger</code>对代码进行调试<br>当执行到<code>debugger</code>语句时，页面会暂停</p>
+<img src="/2023/06/19/fontEnd/debug/debug-chrome/debug_C_028.png" class="">
+<p>也可通过点击左边的行号来添加断点，添加后行号会变成蓝色</p>
+<img src="/2023/06/19/fontEnd/debug/debug-chrome/debug_C_029.png" class="">
+<p><strong>监测变量</strong><br>可在右边的 Watch 中添加变量并对其进行监测</p>
+<img src="/2023/06/19/fontEnd/debug/debug-chrome/debug_C_030.png" class="">
+<p><strong>Event Listener Breakpoints</strong><br>能够对特定事件进行监听，一旦检测到到该事件就会停止 js 运行<br>如下图一旦触发鼠标点击事件就就会停止 js 运行</p>
+<img src="/2023/06/19/fontEnd/debug/debug-chrome/debug_C_032.png" class="">
+<p><strong>Call Stack</strong><br>在使用了框架（Vue）的情况下，若是依然选择 Event Listener Breakpoints 来检测某些事件，回直接跳转到 vue.js 源码里，此时可在 Call Stack 里右击选择 <code>Add script to ignore list</code>来忽略 vue.js 源文件，而是在自己编写的代码里暂停。</p>
+
+        <h4 id="Network"   >
+          <a href="#Network" class="heading-link"><i class="fas fa-link"></i></a><a href="#Network" class="headerlink" title="Network"></a>Network</h4>
+      <p>字段介绍：</p>
+<ul>
+<li>Name 请求的名称</li>
+<li>Status 服务器返回的状态码</li>
+<li>Type 请求的类型</li>
+<li>Initiator 什么发起的请求</li>
+<li>Size 资源的大小</li>
+<li>Time 发起请求的时间</li>
+<li>WateFall 瀑布流信息，可以看出时间具体花在了哪些部分。</li>
+</ul>
+<p><strong>不再监听网络请求</strong><br>点击左上角的红色图标，待其变成灰色后表示已不再监听网络请求了，点击右边的图标可以清空所有请求</p>
+<img src="/2023/06/19/fontEnd/debug/debug-chrome/debug_C_033.png" class="">
+<p><strong>Preserve log</strong><br>勾选 Preserve log 能保存历史请求信息，防止页面跳转后原来的请求信息的没了<br><strong>Disable cache</strong><br>去掉浏览器缓存<br><strong>No throtting</strong><br>节流器，能模拟用户的网络状态<br><strong>Network conditions</strong><br>能进行更多的网络设置</p>
+<img src="/2023/06/19/fontEnd/debug/debug-chrome/debug_C_034.png" class="">
+<p><strong>Import&#x2F;Export HAR file</strong><br>Export HAR file 将浏览器与服务器交互的数据以 JSON 格式保存起来<br>Import HAR file 导入别人的 HAR file 文件，可以用来分析别人的请求情况</p>
+
+        <h4 id="Application"   >
+          <a href="#Application" class="heading-link"><i class="fas fa-link"></i></a><a href="#Application" class="headerlink" title="Application"></a>Application</h4>
+      <p>可以查看存在于客户端的一些数据，如 Local Storage、Session Storage、Cookies 等</p>
+<img src="/2023/06/19/fontEnd/debug/debug-chrome/debug_C_035.png" class="">
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://5cup.github.io">5cup</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/">http://5cup.github.io/2023/06/19/fontEnd/debug/debug-chrome/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://5cup.github.io/tags/debug/">debug</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://5cup.github.io/tags/chrome/">chrome</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2023/06/19/home/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">欢迎来到吴的博客</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2023/06/17/hexo/markdown/"><span class="paginator-prev__text">hexo-markdown 相关语法</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%93%E5%BC%80-Dev-Tool"><span class="toc-number">1.</span> <span class="toc-text">
+          打开 Dev Tool</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%93%E5%BC%80%E5%91%BD%E4%BB%A4%E8%8F%9C%E5%8D%95"><span class="toc-number">2.</span> <span class="toc-text">
+          打开命令菜单</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84-Tab"><span class="toc-number">3.</span> <span class="toc-text">
+          常用的 Tab</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Element"><span class="toc-number">3.1.</span> <span class="toc-text">
+          Element</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE-DOM-%E6%A0%91"><span class="toc-number">3.1.1.</span> <span class="toc-text">
+          查找 DOM 树</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BC%96%E8%BE%91%E6%A0%B7%E5%BC%8F"><span class="toc-number">3.1.2.</span> <span class="toc-text">
+          编辑样式</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Console%EF%BC%88%E6%8E%A7%E5%88%B6%E5%8F%B0%EF%BC%89"><span class="toc-number">3.2.</span> <span class="toc-text">
+          Console（控制台）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Javascript-%E8%B0%83%E8%AF%95"><span class="toc-number">3.2.1.</span> <span class="toc-text">
+          Javascript 调试</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Network"><span class="toc-number">3.3.</span> <span class="toc-text">
+          Network</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Application"><span class="toc-number">3.4.</span> <span class="toc-text">
+          Application</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar"></div><p class="sidebar-ov-author__text">Mr. 吴</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">9</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">4</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">7</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2023</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>5cup</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v6.3.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.8.0</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.8.0"></script><script src="/js/stun-boot.js?v=2.8.0"></script><script src="/js/scroll.js?v=2.8.0"></script><script src="/js/header.js?v=2.8.0"></script><script src="/js/sidebar.js?v=2.8.0"></script></body></html>

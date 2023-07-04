@@ -1,0 +1,490 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.8.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.8.0" type="image/png" sizes="32x32"><meta name="description" content="CSS 选择器       CSS 选择器用于“查找”（或选取）要设置样式的 HTML 元素。  简单选择器（根据名称、id、类来选取元素） 组合器选择器（根据它们之间的特定关系来选取元素） 伪类选择器（根据特定状态选取元素） 伪元素选择器（选取元素的一部分并设置其样式） 属性选择器（根据属性或属性值来选取元素）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS 选择器">
+<meta property="og:url" content="http://5cup.github.io/2023/06/28/css-select/index.html">
+<meta property="og:site_name" content="5cup的博客">
+<meta property="og:description" content="CSS 选择器       CSS 选择器用于“查找”（或选取）要设置样式的 HTML 元素。  简单选择器（根据名称、id、类来选取元素） 组合器选择器（根据它们之间的特定关系来选取元素） 伪类选择器（根据特定状态选取元素） 伪元素选择器（选取元素的一部分并设置其样式） 属性选择器（根据属性或属性值来选取元素）">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://5cup.github.io/2023/06/28/css-select/css-select-001.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/28/css-select/css-select-002.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/28/css-select/css-select-003.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/28/css-select/css-select-004.png">
+<meta property="og:image" content="http://5cup.github.io/2023/06/28/css-select/css-select-005.png">
+<meta property="article:published_time" content="2023-06-28T11:46:28.000Z">
+<meta property="article:modified_time" content="2023-07-02T15:49:49.709Z">
+<meta property="article:author" content="5cup">
+<meta property="article:tag" content="CSS 选择器">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://5cup.github.io/2023/06/28/css-select/css-select-001.png"><title>CSS 选择器 | 5cup的博客</title><link ref="canonical" href="http://5cup.github.io/2023/06/28/css-select/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.8.0"><link rel="stylesheet" href="css/custom.css"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="5cup的博客" type="application/atom+xml">
+</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">CSS 选择器</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2023-06-28</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2023-07-02</span></span></div></header><div class="post-body">
+        <h2 id="CSS-选择器"   >
+          <a href="#CSS-选择器" class="heading-link"><i class="fas fa-link"></i></a><a href="#CSS-选择器" class="headerlink" title="CSS 选择器"></a>CSS 选择器</h2>
+      <p>CSS 选择器用于“查找”（或选取）要设置样式的 HTML 元素。</p>
+<ul>
+<li>简单选择器（根据名称、id、类来选取元素）</li>
+<li>组合器选择器（根据它们之间的特定关系来选取元素）</li>
+<li>伪类选择器（根据特定状态选取元素）</li>
+<li>伪元素选择器（选取元素的一部分并设置其样式）</li>
+<li>属性选择器（根据属性或属性值来选取元素）</li>
+</ul>
+<span id="more"></span>
+
+
+        <h3 id="元素选择器"   >
+          <a href="#元素选择器" class="heading-link"><i class="fas fa-link"></i></a><a href="#元素选择器" class="headerlink" title="元素选择器"></a>元素选择器</h3>
+      <p>元素选择器根据元素名称来选择 HTML 元素。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 页面上的所有 &lt;p &gt; 元素都将居中对齐，并带有红色文本颜色 */</span></span><br><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="id-选择器"   >
+          <a href="#id-选择器" class="heading-link"><i class="fas fa-link"></i></a><a href="#id-选择器" class="headerlink" title="id 选择器"></a>id 选择器</h3>
+      <p>id 选择器使用 HTML 元素的 id 属性来选择特定元素。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* id=&#x27;para1&#x27; 的 HTML 元素将居中对齐，并带有红色文本颜色 */</span></span><br><span class="line"><span class="selector-id">#para1</span> &#123;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p style="color: #852828; text-align: right">id 名称不能以数字开头！ </p>
+
+
+        <h3 id="类选择器"   >
+          <a href="#类选择器" class="heading-link"><i class="fas fa-link"></i></a><a href="#类选择器" class="headerlink" title="类选择器"></a>类选择器</h3>
+      <p>类选择器选择有特定 class 属性的 HTML 元素。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 所有带有 class=&quot;center&quot; 的 HTML 元素将为红色且居中对齐 */</span></span><br><span class="line"><span class="selector-class">.center</span> &#123;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p style="color: #852828; text-align: right">类名不能以数字开头！ </p>
+
+
+        <h3 id="通用选择器"   >
+          <a href="#通用选择器" class="heading-link"><i class="fas fa-link"></i></a><a href="#通用选择器" class="headerlink" title="通用选择器"></a>通用选择器</h3>
+      <p>通用选择器（*）选择页面上的所有的 HTML 元素。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 页面上的每个 HTML 元素将居中对齐，并带有蓝色文本颜色 */</span></span><br><span class="line">* &#123;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">color</span>: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="分组选择器"   >
+          <a href="#分组选择器" class="heading-link"><i class="fas fa-link"></i></a><a href="#分组选择器" class="headerlink" title="分组选择器"></a>分组选择器</h3>
+      <p>分组选择器(,)选取所有具有相同样式定义的 HTML 元素。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* h1、h2 和 p 元素将具有相同的样式定义 */</span></span><br><span class="line"><span class="selector-tag">h1</span>,</span><br><span class="line"><span class="selector-tag">h2</span>,</span><br><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="属性选择器"   >
+          <a href="#属性选择器" class="heading-link"><i class="fas fa-link"></i></a><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h3>
+      <p><strong>简单属性选择</strong></p>
+<ul>
+<li>将包含标题（title）的所有元素变为红色</li>
+</ul>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">*<span class="selector-attr">[title]</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<ul>
+<li>将包含 href 属性的锚（a 元素）变为红色</li>
+</ul>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-attr">[href]</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<ul>
+<li>将同时有 href 和 title 属性的 HTML 超链接的文本设置为红色</li>
+</ul>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-attr">[href]</span><span class="selector-attr">[title]</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>根据具体属性值选择</strong></p>
+<ul>
+<li>将指向 Web 服务器上某个指定文档的超链接变成红色</li>
+</ul>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-attr">[href=<span class="string">&quot;http://5cup.github.io/2023/06/28/css-select/&quot;</span>]</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<ul>
+<li>把多个属性-值选择器链接在一起来选择一个文档。</li>
+</ul>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-attr">[href=<span class="string">&quot;http://5cup.github.io/2023/06/28/css-select/&quot;</span>]</span><span class="selector-attr">[title=<span class="string">&quot;属性选择器&quot;</span>]</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p style="color: #852828; text-align: right">这种格式要求必须与属性值完全匹配。如果属性值包含用空格分隔的值列表，匹配就可能出问题。 </p>
+
+<p><strong>根据部分属性值选择</strong><br>如果需要根据属性值中的词列表的某个词进行选择，则需要使用波浪号（~）。</p>
+<ul>
+<li>选择 class 属性中包含 important 的元素</li>
+</ul>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-attr">[class~=<span class="string">&#x27;important&#x27;</span>]</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p style="color: #852828; text-align: right">如果忽略了波浪号，则说明需要完成完全值匹配。 </p>
+
+<ul>
+<li>子串匹配属性选择器</li>
+</ul>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th align="center">类型</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">[abc^&#x3D;”def”]</td>
+<td align="left">选择 abc 属性值以 “def” 开头的所有元素</td>
+</tr>
+<tr>
+<td align="center">[abc$&#x3D;”def”]</td>
+<td align="left">选择 abc 属性值以 “def” 结尾的所有元素</td>
+</tr>
+<tr>
+<td align="center">[abc*&#x3D;”def”]</td>
+<td align="left">选择 abc 属性值中包含子串 “def” 的所有元素</td>
+</tr>
+</tbody></table></div>
+<p><strong>特定属性选择类型</strong></p>
+<ul>
+<li>选择 lang 属性等于 en 或以 en- 开头的所有元素</li>
+</ul>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">*<span class="selector-attr">[lang|=<span class="string">&#x27;en&#x27;</span>]</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p style="color: #852828; text-align: right">一般来说，[att|="val"] 可以用于任何属性及其值。</p>
+
+
+        <h3 id="后代选择器"   >
+          <a href="#后代选择器" class="heading-link"><i class="fas fa-link"></i></a><a href="#后代选择器" class="headerlink" title="后代选择器"></a>后代选择器</h3>
+      <p>后代选择器（descendant selector）又称为包含选择器。<br>后代选择器可以选择作为某元素后代的元素。</p>
+<p><strong>根据上下文选择元素</strong></p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 把作为 h1 元素后代的 em 元素的文本变为 红色。 */</span></span><br><span class="line"><span class="selector-tag">h1</span> <span class="selector-tag">em</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="子元素选择器"   >
+          <a href="#子元素选择器" class="heading-link"><i class="fas fa-link"></i></a><a href="#子元素选择器" class="headerlink" title="子元素选择器"></a>子元素选择器</h3>
+      <p>后代选择器相比，子元素选择器（Child selectors）只能选择作为某元素子元素的元素。<br>如果您不希望选择任意的后代元素，而是希望缩小范围，只选择某个元素的子元素，请使用子元素选择器（Child selector）。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 选择只作为 h1 元素子元素的 strong 元素 */</span></span><br><span class="line"><span class="selector-tag">h1</span> &gt; <span class="selector-tag">strong</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="相邻兄弟选择器"   >
+          <a href="#相邻兄弟选择器" class="heading-link"><i class="fas fa-link"></i></a><a href="#相邻兄弟选择器" class="headerlink" title="相邻兄弟选择器"></a>相邻兄弟选择器</h3>
+      <p>相邻兄弟选择器（Adjacent sibling selector）可选择紧接在另一元素后的元素，且二者有相同父元素。</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 增加紧接在 h1 元素后出现的段落的上边距 */</span></span><br><span class="line"><span class="selector-tag">h1</span> + <span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">margin-top</span>: <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="伪类选择器"   >
+          <a href="#伪类选择器" class="heading-link"><i class="fas fa-link"></i></a><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h3>
+      <ul>
+<li><code>:first-child</code> 伪类与指定的元素匹配：该元素是另一个元素的第一个子元素。<br><strong>匹配作为任何元素的第一个子元素的任何&lt;p&gt; 元素</strong><figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:first</span>-child &#123;</span><br><span class="line">  <span class="attribute">color</span>: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<strong>匹配所有 &lt;p&gt; 元素中的首个 &lt;i&gt; 元素</strong><figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> <span class="selector-tag">i</span><span class="selector-pseudo">:first</span>-child &#123;</span><br><span class="line">  <span class="attribute">color</span>: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<strong>匹配所有作为另一个元素的第一个子元素的 &lt;p&gt; 元素中的所有 &lt;i&gt; 元素</strong><figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:first</span>-child <span class="selector-tag">i</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure></li>
+<li><code>:lang</code> 伪类允许为不同的语言定义特殊的规则<br><strong>:lang 为属性为 lang&#x3D;”en” 的 &lt;q&gt; 元素定义引号</strong><figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">q</span><span class="selector-pseudo">:lang</span>(en) &#123;</span><br><span class="line">  <span class="attribute">quotes</span>: <span class="string">&#x27;~&#x27;</span><span class="string">&#x27;~&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure></li>
+</ul>
+
+        <h3 id="伪元素选择器"   >
+          <a href="#伪元素选择器" class="heading-link"><i class="fas fa-link"></i></a><a href="#伪元素选择器" class="headerlink" title="伪元素选择器"></a>伪元素选择器</h3>
+      <ul>
+<li><code>::first-line</code> 伪元素用于向文本的首行添加特殊样式。<br><strong>为所有 &lt;p&gt; 元素中的首行添加样式</strong><figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">::first-line</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#ff0000</span>;</span><br><span class="line">  <span class="attribute">font-variant</span>: small-caps;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">  Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti recusandae exercitationem totam magni veritatis voluptatibus, error illo commodi</span><br><span class="line">  alias vitae voluptatem eos nulla amet odio, quia repellendus! Minima, aliquam inventore.</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+<strong>效果</strong><img src="/2023/06/28/css-select/css-select-001.png" class="">
+<strong>以下属性适用于 ::first-line 伪元素：</strong><ul>
+<li>字体属性</li>
+<li>颜色属性</li>
+<li>背景属性</li>
+<li>word-spacing</li>
+<li>letter-spacing</li>
+<li>text-decoration</li>
+<li>vertical-align</li>
+<li>text-transform</li>
+<li>line-height</li>
+<li>clear</li>
+</ul>
+</li>
+</ul>
+<p style="color: #852828; text-align: right">::first-line 伪元素只能应用于块级元素。</p>
+
+<ul>
+<li><p><code>::first-letter</code> 伪元素用于向文本的首字母添加特殊样式。<br><strong>设置所有 &lt;p&gt; 元素中文本的首字母格式</strong></p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">::first-letter</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#ff0000</span>;</span><br><span class="line">  <span class="attribute">font-size</span>: xx-large;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>效果</strong></p>
+<img src="/2023/06/28/css-select/css-select-002.png" class="">
+
+<p><strong>下面的属性适用于 ::first-letter 伪元素：</strong></p>
+<ul>
+<li>字体属性</li>
+<li>颜色属性</li>
+<li>背景属性</li>
+<li>外边距属性</li>
+<li>内边距属性</li>
+<li>边框属性</li>
+<li>text-decoration</li>
+<li>vertical-align（仅当 “float” 为 “none”）</li>
+<li>text-transform</li>
+<li>line-height</li>
+<li>float</li>
+<li>clear</li>
+</ul>
+</li>
+<li><p><code>::before</code> 伪元素可用于在元素内容之前插入一些内容<br><strong>在每个 &lt;h1&gt; 元素的内容之前插入一幅图像</strong></p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="built_in">url</span>(<span class="string">lion.png</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>这是一个标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+<p><strong>效果</strong></p>
+<img src="/2023/06/28/css-select/css-select-003.png" class="">
+</li>
+<li><p><code>::after</code> 伪元素可用于在元素内容之后插入一些内容。</p>
+</li>
+</ul>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="built_in">url</span>(<span class="string">smiley.gif</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>效果</strong></p>
+<img src="/2023/06/28/css-select/css-select-004.png" class="">
+
+<ul>
+<li><p><code>::selection</code> 伪元素匹配用户选择的元素部分。<br><strong>使所选文本在黄色背景上显示为红色：</strong></p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">::selection</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">  <span class="attribute">background</span>: yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>效果</strong></p>
+<img src="/2023/06/28/css-select/css-select-005.png" class="">
+<p><strong>以下 CSS 属性可以应用于 ::selection：</strong></p>
+<ul>
+<li>color</li>
+<li>background</li>
+<li>cursor</li>
+<li>outline</li>
+</ul>
+</li>
+</ul>
+<p><strong>所有 CSS 伪类</strong></p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>例子</th>
+<th>例子描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>:active</td>
+<td>a:active</td>
+<td>选择活动的链接。</td>
+</tr>
+<tr>
+<td>:checked</td>
+<td>input:checked</td>
+<td>选择每个被选中的 &lt;input&gt; 元素。</td>
+</tr>
+<tr>
+<td>:disabled</td>
+<td>input:disabled</td>
+<td>选择每个被禁用的 &lt;input&gt; 元素。</td>
+</tr>
+<tr>
+<td>:empty</td>
+<td>p:empty</td>
+<td>选择没有子元素的每个 &lt;p&gt; 元素。</td>
+</tr>
+<tr>
+<td>:enabled</td>
+<td>input:enabled</td>
+<td>选择每个已启用的 &lt;input&gt; 元素。</td>
+</tr>
+<tr>
+<td>:first-child</td>
+<td>p:first-child</td>
+<td>选择作为其父的首个子元素的每个 &lt;p&gt; 元素。</td>
+</tr>
+<tr>
+<td>:first-of-type</td>
+<td>p:first-of-type</td>
+<td>选择作为其父的首个 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。</td>
+</tr>
+<tr>
+<td>:focus</td>
+<td>input:focus</td>
+<td>选择获得焦点的 &lt;input&gt; 元素。</td>
+</tr>
+<tr>
+<td>:hover</td>
+<td>a:hover</td>
+<td>选择鼠标悬停其上的链接。</td>
+</tr>
+<tr>
+<td>:in-range</td>
+<td>input:in-range</td>
+<td>选择具有指定范围内的值的 &lt;input&gt; 元素。</td>
+</tr>
+<tr>
+<td>:invalid</td>
+<td>input:invalid</td>
+<td>选择所有具有无效值的 &lt;input&gt; 元素。</td>
+</tr>
+<tr>
+<td>:lang(language)</td>
+<td>p:lang(it)</td>
+<td>选择每个 lang 属性值以 “it” 开头的 &lt;p&gt; 元素。</td>
+</tr>
+<tr>
+<td>:last-child</td>
+<td>p:last-child</td>
+<td>选择作为其父的最后一个子元素的每个 &lt;p&gt; 元素。</td>
+</tr>
+<tr>
+<td>:last-of-type</td>
+<td>p:last-of-type</td>
+<td>选择作为其父的最后一个 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。</td>
+</tr>
+<tr>
+<td>:link</td>
+<td>a:link</td>
+<td>选择所有未被访问的链接。</td>
+</tr>
+<tr>
+<td>:not(selector)</td>
+<td>:not(p)</td>
+<td>选择每个非 &lt;p&gt; 元素的元素。</td>
+</tr>
+<tr>
+<td>:not(selector)</td>
+<td>:not(p)</td>
+<td>选择每个非 &lt;p&gt; 元素的元素。</td>
+</tr>
+<tr>
+<td>:nth-child(n)</td>
+<td>p:nth-child(2)</td>
+<td>选择作为其父的第二个子元素的每个 &lt;p&gt; 元素。</td>
+</tr>
+<tr>
+<td>:nth-last-child(n)</td>
+<td>p:nth-last-child(2)</td>
+<td>选择作为父的第二个子元素的每个&lt;p&gt;元素，从最后一个子元素计数。</td>
+</tr>
+<tr>
+<td>:nth-last-of-type(n)</td>
+<td>p:nth-last-of-type(2)</td>
+<td>选择作为父的第二个&lt;p&gt;元素的每个&lt;p&gt;元素，从最后一个子元素计数</td>
+</tr>
+<tr>
+<td>:nth-of-type(n)</td>
+<td>p:nth-of-type(2)</td>
+<td>选择作为其父的第二个 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。</td>
+</tr>
+<tr>
+<td>:only-of-type</td>
+<td>p:only-of-type</td>
+<td>选择作为其父的唯一 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。</td>
+</tr>
+<tr>
+<td>:only-child</td>
+<td>p:only-child</td>
+<td>选择作为其父的唯一子元素的 &lt;p&gt; 元素。</td>
+</tr>
+<tr>
+<td>:optional</td>
+<td>input:optional</td>
+<td>选择不带 “required” 属性的 &lt;input&gt; 元素。</td>
+</tr>
+<tr>
+<td>:out-of-range</td>
+<td>input:out-of-range</td>
+<td>选择值在指定范围之外的 &lt;input&gt; 元素。</td>
+</tr>
+<tr>
+<td>:read-only</td>
+<td>input:read-only</td>
+<td>选择指定了 “readonly” 属性的 &lt;input&gt; 元素。</td>
+</tr>
+<tr>
+<td>:read-write</td>
+<td>input:read-write</td>
+<td>选择不带 “readonly” 属性的\ &lt;input&gt; 元素。</td>
+</tr>
+<tr>
+<td>:required</td>
+<td>input:required</td>
+<td>选择指定了 “required” 属性的 &lt;input&gt; 元素。</td>
+</tr>
+<tr>
+<td>:root</td>
+<td>root</td>
+<td>选择元素的根元素。</td>
+</tr>
+<tr>
+<td>:target</td>
+<td>#news:target</td>
+<td>选择当前活动的 #news 元素（单击包含该锚名称的 URL）。</td>
+</tr>
+<tr>
+<td>:valid</td>
+<td>input:valid</td>
+<td>选择所有具有有效值的&lt;input&gt; 元素。</td>
+</tr>
+<tr>
+<td>:visited</td>
+<td>a:visited</td>
+<td>选择所有已访问的链接。</td>
+</tr>
+</tbody></table></div>
+<p><strong>所有 CSS 伪元素</strong></p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>例子</th>
+<th>例子描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>::after</td>
+<td>p::after</td>
+<td>在每个 &lt;p&gt; 元素之后插入内容。</td>
+</tr>
+<tr>
+<td>::before</td>
+<td>p::before</td>
+<td>在每个 &lt;p&gt; 元素之前插入内容。</td>
+</tr>
+<tr>
+<td>::first-letter</td>
+<td>p::first-letter</td>
+<td>选择每个 &lt;p&gt; 元素的首字母。</td>
+</tr>
+<tr>
+<td>::first-line</td>
+<td>p::first-line</td>
+<td>选择每个 &lt;p&gt; 元素的首行。</td>
+</tr>
+<tr>
+<td>::selection</td>
+<td>p::selection</td>
+<td>选择用户选择的元素部分。</td>
+</tr>
+</tbody></table></div>
+
+        <h2 id="选择器权重"   >
+          <a href="#选择器权重" class="heading-link"><i class="fas fa-link"></i></a><a href="#选择器权重" class="headerlink" title="选择器权重"></a>选择器权重</h2>
+      <blockquote>
+<p>!important<br>&gt; 内联样式 (1000)<br>&gt; id 选择器(100)<br>&gt; 类选择器&#x2F;伪类选择器&#x2F;属性选择器 (10)<br>&gt; 元素选择器&#x2F;伪元素选择器 (1)<br>&gt; 通配符(*)&#x2F;子选择器(&gt;)&#x2F;相邻选择器(+)等 (0)<br>&gt; 继承的样式 (00)</p>
+</blockquote>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://5cup.github.io">5cup</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://5cup.github.io/2023/06/28/css-select/">http://5cup.github.io/2023/06/28/css-select/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://5cup.github.io/tags/CSS-%E9%80%89%E6%8B%A9%E5%99%A8/">CSS 选择器</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2023/06/30/js-base/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">JavaScript 基础</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2023/06/20/vue2-lifeCycle/"><span class="paginator-prev__text">vue2 生命周期</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS-%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.</span> <span class="toc-text">
+          CSS 选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%83%E7%B4%A0%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.1.</span> <span class="toc-text">
+          元素选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#id-%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.2.</span> <span class="toc-text">
+          id 选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.3.</span> <span class="toc-text">
+          类选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.4.</span> <span class="toc-text">
+          通用选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.5.</span> <span class="toc-text">
+          分组选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.6.</span> <span class="toc-text">
+          属性选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8E%E4%BB%A3%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.7.</span> <span class="toc-text">
+          后代选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%90%E5%85%83%E7%B4%A0%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.8.</span> <span class="toc-text">
+          子元素选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E9%82%BB%E5%85%84%E5%BC%9F%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.9.</span> <span class="toc-text">
+          相邻兄弟选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.10.</span> <span class="toc-text">
+          伪类选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%AA%E5%85%83%E7%B4%A0%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.11.</span> <span class="toc-text">
+          伪元素选择器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%99%A8%E6%9D%83%E9%87%8D"><span class="toc-number">2.</span> <span class="toc-text">
+          选择器权重</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar"></div><p class="sidebar-ov-author__text">Mr. 吴</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">9</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">4</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">7</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2023</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>5cup</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v6.3.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.8.0</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.8.0"></script><script src="/js/stun-boot.js?v=2.8.0"></script><script src="/js/scroll.js?v=2.8.0"></script><script src="/js/header.js?v=2.8.0"></script><script src="/js/sidebar.js?v=2.8.0"></script></body></html>
