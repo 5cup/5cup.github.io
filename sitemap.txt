@@ -1,7 +1,7 @@
 http://5cup.github.io/2023/08/06/js-js-typeCheaking/
 http://5cup.github.io/2023/08/06/js/js-typeCheaking/
 http://5cup.github.io/2023/08/04/introduce/
-http://5cup.github.io/categories/index.html
 http://5cup.github.io/tags/index.html
+http://5cup.github.io/categories/index.html
 http://5cup.github.io/about/index.html
 http://5cup.github.io/
