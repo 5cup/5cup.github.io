@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  line-height: 1.15;
+  background-image: radial-gradient(#3113a9, #121da3, #061c4c);
+  min-height: 100vh;
+}
+header {
+  height: 1.25rem;
+  background-color: #1b1b9b;
+}
