@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://5cup.github.io/2023/08/06/css/css-flex/</loc>
+    <lastmod>2023-08-06</lastmod>
+  </url>
+  <url>
+    <loc>http://5cup.github.io/2023/08/06/js/js-string-methods/</loc>
+    <lastmod>2023-08-06</lastmod>
+  </url>
+  <url>
     <loc>http://5cup.github.io/2023/08/06/js/js-typeCheaking/</loc>
     <lastmod>2023-08-05</lastmod>
   </url>
