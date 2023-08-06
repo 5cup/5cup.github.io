@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>http://5cup.github.io/tags/index.html</loc>
+    <loc>http://5cup.github.io/categories/index.html</loc>
     
     <lastmod>2023-07-02</lastmod>
     
@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>http://5cup.github.io/categories/index.html</loc>
+    <loc>http://5cup.github.io/tags/index.html</loc>
     
     <lastmod>2023-07-02</lastmod>
     
@@ -83,14 +83,14 @@
   </url>
   
   <url>
-    <loc>http://5cup.github.io/categories/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/js/</loc>
+    <loc>http://5cup.github.io/categories/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/css/</loc>
     <lastmod>2023-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://5cup.github.io/categories/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/css/</loc>
+    <loc>http://5cup.github.io/categories/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/js/</loc>
     <lastmod>2023-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
