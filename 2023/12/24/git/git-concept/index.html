@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha256-yIDrPSXHZdOZhAqiBP7CKzIwMQmRCJ8UeB8Jo17YC4o=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"5cup.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="仓库（Repository）存储项目文件和历史记录的地方 克隆（Clone）创建一个本地仓库的完整副本 提交（Commit）保存对仓库中文件的更改">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git 相关概念">
+<meta property="og:url" content="https://5cup.github.io/2023/12/24/git/git-concept/index.html">
+<meta property="og:site_name" content="登云阁">
+<meta property="og:description" content="仓库（Repository）存储项目文件和历史记录的地方 克隆（Clone）创建一个本地仓库的完整副本 提交（Commit）保存对仓库中文件的更改">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-12-24T13:17:39.000Z">
+<meta property="article:modified_time" content="2023-12-26T07:19:06.913Z">
+<meta property="article:author" content="Ethon Re">
+<meta property="article:tag" content="Git">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://5cup.github.io/2023/12/24/git/git-concept/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://5cup.github.io/2023/12/24/git/git-concept/","path":"2023/12/24/git/git-concept/","title":"Git 相关概念"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Git 相关概念 | 登云阁</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">登云阁</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">万丈高楼平地起</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%93%E5%BA%93%EF%BC%88Repository%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">仓库（Repository）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%8B%E9%9A%86%EF%BC%88Clone%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">克隆（Clone）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%90%E4%BA%A4%EF%BC%88Commit%EF%BC%89"><span class="nav-number">3.</span> <span class="nav-text">提交（Commit）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E6%94%AF%EF%BC%88Branch%EF%BC%89"><span class="nav-number">4.</span> <span class="nav-text">分支（Branch）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%88%E5%B9%B6%EF%BC%88Merge%EF%BC%89"><span class="nav-number">5.</span> <span class="nav-text">合并（Merge）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%B2%E7%AA%81%EF%BC%88Conflict%EF%BC%89"><span class="nav-number">6.</span> <span class="nav-text">冲突（Conflict）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%89%E5%8F%96%E8%AF%B7%E6%B1%82%EF%BC%88PullRequest%EF%BC%89"><span class="nav-number">7.</span> <span class="nav-text">拉取请求（PullRequest）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A8%E9%80%81%EF%BC%88Pudh%EF%BC%89"><span class="nav-number">8.</span> <span class="nav-text">推送（Pudh）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%89%E5%8F%96%EF%BC%88Pull%EF%BC%89"><span class="nav-number">9.</span> <span class="nav-text">拉取（Pull）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9A%82%E5%AD%98%E5%8C%BA%EF%BC%88Staging-Area%EF%BC%89"><span class="nav-number">10.</span> <span class="nav-text">暂存区（Staging Area）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A3%80%E5%87%BA%EF%BC%88Check-out%EF%BC%89"><span class="nav-number">11.</span> <span class="nav-text">检出（Check out）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9C%E7%A8%8B%EF%BC%88Remote%EF%BC%89"><span class="nav-number">12.</span> <span class="nav-text">远程（Remote）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E7%AD%BE%EF%BC%88Tag%EF%BC%89"><span class="nav-number">13.</span> <span class="nav-text">标签（Tag）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HEAD"><span class="nav-number">14.</span> <span class="nav-text">HEAD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rebase"><span class="nav-number">15.</span> <span class="nav-text">rebase</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gitignore-%E6%96%87%E4%BB%B6"><span class="nav-number">16.</span> <span class="nav-text">gitignore 文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%8F%89%EF%BC%88Fork%EF%BC%89"><span class="nav-number">17.</span> <span class="nav-text">分叉（Fork）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%EF%BC%88Index%EF%BC%89"><span class="nav-number">18.</span> <span class="nav-text">索引（Index）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E7%85%A7%EF%BC%88Snapshot%EF%BC%89"><span class="nav-number">19.</span> <span class="nav-text">快照（Snapshot）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%92%A9%E5%AD%90%EF%BC%88Hooks%EF%BC%89"><span class="nav-number">20.</span> <span class="nav-text">钩子（Hooks）</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Ethon Re</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://5cup.github.io/2023/12/24/git/git-concept/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Ethon Re">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="登云阁">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Git 相关概念 | 登云阁">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Git 相关概念
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-12-24 21:17:39" itemprop="dateCreated datePublished" datetime="2023-12-24T21:17:39+08:00">2023-12-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-12-26 15:19:06" itemprop="dateModified" datetime="2023-12-26T15:19:06+08:00">2023-12-26</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="仓库（Repository）"><a href="#仓库（Repository）" class="headerlink" title="仓库（Repository）"></a>仓库（Repository）</h2><p>存储项目文件和历史记录的地方</p>
+<h2 id="克隆（Clone）"><a href="#克隆（Clone）" class="headerlink" title="克隆（Clone）"></a>克隆（Clone）</h2><p>创建一个本地仓库的完整副本</p>
+<h2 id="提交（Commit）"><a href="#提交（Commit）" class="headerlink" title="提交（Commit）"></a>提交（Commit）</h2><p>保存对仓库中文件的更改</p>
+<span id="more"></span>
+
+<h2 id="分支（Branch）"><a href="#分支（Branch）" class="headerlink" title="分支（Branch）"></a>分支（Branch）</h2><p>项目的不同版本线</p>
+<h2 id="合并（Merge）"><a href="#合并（Merge）" class="headerlink" title="合并（Merge）"></a>合并（Merge）</h2><p>将一个分支的更改合并到另一个分支</p>
+<h2 id="冲突（Conflict）"><a href="#冲突（Conflict）" class="headerlink" title="冲突（Conflict）"></a>冲突（Conflict）</h2><p>当合并两个分支时，相同文件的不同更改导致的问题</p>
+<h2 id="拉取请求（PullRequest）"><a href="#拉取请求（PullRequest）" class="headerlink" title="拉取请求（PullRequest）"></a>拉取请求（PullRequest）</h2><p>在代码托管平台（如 GitHub）上请求将你的更改合并到原始仓库</p>
+<h2 id="推送（Pudh）"><a href="#推送（Pudh）" class="headerlink" title="推送（Pudh）"></a>推送（Pudh）</h2><p>将本地更改发送到远程仓库</p>
+<h2 id="拉取（Pull）"><a href="#拉取（Pull）" class="headerlink" title="拉取（Pull）"></a>拉取（Pull）</h2><p>从远程仓库获取更新并合并到本地仓库</p>
+<h2 id="暂存区（Staging-Area）"><a href="#暂存区（Staging-Area）" class="headerlink" title="暂存区（Staging Area）"></a>暂存区（Staging Area）</h2><p>临时保存改动的地方，在提交前</p>
+<h2 id="检出（Check-out）"><a href="#检出（Check-out）" class="headerlink" title="检出（Check out）"></a>检出（Check out）</h2><p>切换到不同的分支或提交</p>
+<h2 id="远程（Remote）"><a href="#远程（Remote）" class="headerlink" title="远程（Remote）"></a>远程（Remote）</h2><p>指向远程仓库的引用</p>
+<h2 id="标签（Tag）"><a href="#标签（Tag）" class="headerlink" title="标签（Tag）"></a>标签（Tag）</h2><p>标记特定的提交，通常用于版本发布</p>
+<h2 id="HEAD"><a href="#HEAD" class="headerlink" title="HEAD"></a>HEAD</h2><p>指向当前分支最近一次提交的指针</p>
+<h2 id="rebase"><a href="#rebase" class="headerlink" title="rebase"></a>rebase</h2><p>一种合并的替代方法，用于重新排列提交的的顺序</p>
+<h2 id="gitignore-文件"><a href="#gitignore-文件" class="headerlink" title="gitignore 文件"></a>gitignore 文件</h2><p>定义 Git 应忽略的文件和目录的文件</p>
+<h2 id="分叉（Fork）"><a href="#分叉（Fork）" class="headerlink" title="分叉（Fork）"></a>分叉（Fork）</h2><p>在代码托管平台上创建项目副本</p>
+<h2 id="索引（Index）"><a href="#索引（Index）" class="headerlink" title="索引（Index）"></a>索引（Index）</h2><p>Git 内部的一个构成区域，保存了下一次提交将包含的文件列表</p>
+<h2 id="快照（Snapshot）"><a href="#快照（Snapshot）" class="headerlink" title="快照（Snapshot）"></a>快照（Snapshot）</h2><p>提交时，Git 对文件的状态进行快照，而不仅仅是记录差异</p>
+<h2 id="钩子（Hooks）"><a href="#钩子（Hooks）" class="headerlink" title="钩子（Hooks）"></a>钩子（Hooks）</h2><p>脚本，可以在特定动作发生时自动运行，如在提交前运行测试</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Git/" rel="tag"># Git</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/12/23/git/git-command/" rel="prev" title="Git 命令">
+                  <i class="fa fa-angle-left"></i> Git 命令
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  
+  <div class="comments">
+  <script src="https://utteranc.es/client.js" repo="https://5cup.github.io/" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script>
+  </div>
+  
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Ethon Re</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
