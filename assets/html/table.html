@@ -1,0 +1,110 @@
+{# <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>表格</title>
+    <link rel="stylesheet" href="/assets/css/public.css" />
+    <script src="/assets/js/public.js"></script>
+    <script>
+      getParams().then((res) => {
+        if (res && res.data) {
+          // 根据url参数加载js文件
+          const filename = res.data;
+          loadJS(`/assets/data/table/${filename}.js`, () => {
+            window.onload = () => {
+              //   添加表头
+              let mythead = document.getElementById("mythead");
+              let thInnerHtml = "";
+              eval(`_${filename}`).thead.forEach((item) => {
+                thInnerHtml += `<th>${item}</th>`;
+              });
+              mythead.innerHTML = thInnerHtml;
+              //   添加表格内容
+              let mytbody = document.getElementById("mytbody");
+              //   获取表格有几列
+              let tbCol = eval(`_${filename}`).thead.length;
+
+              // 当总列数与表头不匹配时跳出
+              if (eval(`_${filename}`).tbody.length % tbCol !== 0) {
+                mytbody.innerHTML = `<tr><td class="error" colspan="${tbCol}">数据错误</td></tr>`;
+                return;
+              }
+
+              let tbInnerHtml = "<tr>";
+              eval(`_${filename}`).tbody.forEach((item, index) => {
+                // 根据type类型添加不同标签
+                switch (item.type) {
+                  case "text":
+                    tbInnerHtml += `<td>${item.content}</td>`;
+                    break;
+                  case "text-br":
+                    let text = "";
+                    item.content.forEach((_item, _index) => {
+                      text += _index === 0 ? _item : "<br /><br />" + _item;
+                    });
+                    tbInnerHtml += `<td>${text}</td>`;
+                    break;
+                  case "note":
+                    tbInnerHtml += `<td><i><del class="td-note">${item.content[0]}</del></i>${item.content[1]}</td>`;
+                    break;
+                  case "i":
+                    tbInnerHtml += `<td><i>${item.content}</i></td>`;
+                    break;
+                  default:
+                    tbInnerHtml += `<td> </td>`;
+                    break;
+                }
+                if ((index + 1) % tbCol === 0) {
+                  tbInnerHtml += "</tr>";
+                }
+              });
+              mytbody.innerHTML = tbInnerHtml;
+            };
+          });
+        }
+      });
+    </script>
+    <style>
+      .mytb {
+        border: 1px solid gray;
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+      }
+      tr:nth-child(even) {
+        background: #e7e3e3;
+      }
+      thead {
+        background-color: #b99292;
+      }
+      th,
+      td {
+        border: 1px solid #c9c2c2;
+        padding: 0.6em 0.4em;
+        font-size: 1.125em;
+        vertical-align: top;
+      }
+      .error {
+        text-align: center;
+      }
+      .td-note {
+        color: red;
+        font-size: 0.9em;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <colgroup>
+        <col span="2" style="background-color:red">
+        <col style="background-color:yellow">
+      </colgroup> -->
+    <table class="mytb">
+      <thead>
+        <tr id="mythead"></tr>
+      </thead>
+      <tbody id="mytbody"></tbody>
+    </table>
+    <br />
+  </body>
+</html> #}

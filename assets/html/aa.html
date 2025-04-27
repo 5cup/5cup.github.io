@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heart Rate Monitor</title>
+  </head>
+  <body>
+    <h1>Heart Rate Monitor</h1>
+    <button id="connect">Connect to Heart Rate Monitor</button>
+    <p id="heartRate">Heart Rate: --</p>
+
+    <script>
+      document.getElementById("connect").addEventListener("click", async () => {
+        try {
+          // 请求心率监测设备
+          const device = await navigator.bluetooth.requestDevice({
+            filters: [{ services: ["heart_rate"] }],
+          });
+
+          // 连接设备
+          const server = await device.gatt.connect();
+
+          // 获取心率服务
+          const service = await server.getPrimaryService("heart_rate");
+
+          // 获取心率测量特征
+          const characteristic = await service.getCharacteristic(
+            "heart_rate_measurement"
+          );
+
+          // 监听心率测量特征的变化
+          characteristic.addEventListener(
+            "characteristicvaluechanged",
+            handleHeartRateMeasurement
+          );
+          await characteristic.startNotifications();
+
+          console.log("Connected to heart rate monitor");
+        } catch (error) {
+          console.error("Error:", error);
+        }
+      });
+
+      function handleHeartRateMeasurement(event) {
+        const value = event.target.value;
+        const heartRate = value.getUint8(1);
+        document.getElementById(
+          "heartRate"
+        ).textContent = `Heart Rate: ${heartRate}`;
+      }
+    </script>
+  </body>
+</html>

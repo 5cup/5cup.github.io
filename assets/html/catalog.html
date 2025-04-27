@@ -1,0 +1,60 @@
+{# <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>相关文章</title>
+    <link rel="stylesheet" href="/assets/css/public.css" />
+    <script src="/assets/js/public.js"></script>
+    <script>
+      getParams().then((res) => {
+        if (res && res.data) {
+          // 根据url参数加载js文件
+          const filename = res.data;
+          loadJS(`/assets/data/catalog/${filename}.js`, () => {
+            window.onload = () => {
+              let catalogUl = document.getElementById("catalog-ul");
+              let ulInnerHtml = "";
+              let pathname = window.parent.location.pathname;
+              eval(`_${filename}`).forEach((item) => {
+                if (pathname !== item.path) {
+                  ulInnerHtml += `<li><a target="_parent" href="${item.path}">${item.title}</a></li>`;
+                }
+              });
+              if (!!ulInnerHtml) {
+                catalogUl.innerHTML = ulInnerHtml;
+              } else {
+                document.getElementsByTagName("b")[0].innerText =
+                  "暂无相关文章";
+              }
+            };
+          });
+        }
+      });
+    </script>
+    <style>
+      ul {
+        list-style: none;
+        color: #555;
+        font-size: 1.125em;
+      }
+      ul li {
+        padding: 0.25em;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      a:hover {
+        font-weight: bold;
+      }
+      b {
+        font-size: 1.125em;
+      }
+    </style>
+  </head>
+  <body>
+    <b>更多文章</b>
+    <ul id="catalog-ul"></ul>
+  </body>
+</html> #}

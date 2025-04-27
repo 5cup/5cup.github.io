@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .parent {
+        background-color: red;
+        width: 100px;
+        height: 80px;
+        /* overflow: hidden; 1 */
+        /* padding-top: 1px; */
+        position: relative;
+      }
+      .child {
+        margin-top: 20px;
+        background-color: blue;
+        width: 80px;
+        height: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child"></div>
+    </div>
+    <script>
+      let lang_zh = "楪祈";
+      let lang_ja = "ゆずりは いのり";
+
+      function joint(str) {
+        return eval("lang_" + str);
+      }
+
+      console.log(joint("zh"));
+      console.log(joint("ja"));
+    </script>
+  </body>
+</html>
